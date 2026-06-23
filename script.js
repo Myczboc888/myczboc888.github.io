@@ -14,22 +14,21 @@ function startGame(){
 }
 
 
-// Меню
+// Открыть меню
 function openMenu(){
 
     let menu = document.getElementById("menu");
 
     if(menu.style.display === "block"){
         menu.style.display = "none";
-    }
-    else{
+    } else {
         menu.style.display = "block";
     }
 
 }
 
 
-// Выбор предмета
+// Выбрать предмет
 function choose(item){
 
     selected = item;
@@ -37,13 +36,12 @@ function choose(item){
 }
 
 
-// Установка уровня костра
+// Уровень костра
 function setFire(level){
 
     fire = level;
 
     document.getElementById("fire").textContent = level;
-
 
     protect = level * 10;
 
@@ -52,7 +50,7 @@ function setFire(level){
 }
 
 
-// Режим удаления
+// Удаление предметов
 function removeMode(){
 
     selected = "remove";
@@ -60,7 +58,7 @@ function removeMode(){
 }
 
 
-// Очистить базу
+// Очистка базы
 function clearBase(){
 
     createMap();
@@ -68,7 +66,7 @@ function clearBase(){
 }
 
 
-// Создание карты
+// Создание карты 15x15
 function createMap(){
 
     let map = document.getElementById("map");
@@ -76,8 +74,7 @@ function createMap(){
     map.innerHTML = "";
 
 
-    for(let i = 0; i < 150; i++){
-
+    for(let i = 0; i < 225; i++){
 
         let cell = document.createElement("div");
 
@@ -88,40 +85,31 @@ function createMap(){
 
             cell.textContent = "🔥";
 
-        }
-        else{
+        } else {
 
             cell.textContent = "🟩";
 
         }
 
 
-
         cell.onclick = function(){
-
 
             if(selected === "remove"){
 
                 cell.textContent = "🟩";
 
             }
-
-
             else if(selected !== ""){
 
                 cell.textContent = selected;
 
             }
 
-
         };
-
 
 
         map.appendChild(cell);
 
-
     }
-
 
 }
