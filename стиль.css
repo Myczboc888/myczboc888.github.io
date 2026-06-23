@@ -46,7 +46,7 @@ button {
 
 #menu {
     display: none;
-    background: #0009;
+    background: rgba(0,0,0,0.6);
     padding: 15px;
     border-radius: 20px;
 }
@@ -64,6 +64,7 @@ button {
 .cell {
     width: 35px;
     height: 35px;
+
     background: #45b945;
     border: 2px solid green;
 
